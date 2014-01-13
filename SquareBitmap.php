@@ -2,10 +2,6 @@
 
 namespace LazyBitmap;
 
-require_once __DIR__ . '/Bitmap.php';
-require_once __DIR__ . '/ILazyBitmap.php';
-require_once __DIR__ . '/Pixel.php';
-
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Pixel;

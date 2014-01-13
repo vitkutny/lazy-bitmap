@@ -2,9 +2,6 @@
 
 namespace LazyBitmap\Effect\Color\Overlay;
 
-require_once __DIR__ . '/../../../Bitmap.php';
-require_once __DIR__ . '/../../../ILazyBitmap.php';
-
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 

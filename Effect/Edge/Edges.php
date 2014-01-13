@@ -2,13 +2,6 @@
 
 namespace LazyBitmap\Effect\Edge;
 
-require_once __DIR__ . '/../../Bitmap.php';
-require_once __DIR__ . '/../../ILazyBitmap.php';
-require_once __DIR__ . '/TopLeftEdge.php';
-require_once __DIR__ . '/BottomLeftEdge.php';
-require_once __DIR__ . '/RightEdge.php';
-require_once __DIR__ . '/../../Operation/Unification.php';
-
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Effect\Edge\TopLeftEdge;

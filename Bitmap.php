@@ -2,8 +2,6 @@
 
 namespace LazyBitmap;
 
-require_once __DIR__ . '/ILazyBitmap.php';
-
 use LazyBitmap\ILazyBitmap;
 
 abstract class Bitmap implements ILazyBitmap {

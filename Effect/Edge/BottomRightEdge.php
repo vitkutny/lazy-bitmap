@@ -2,11 +2,6 @@
 
 namespace LazyBitmap\Effect\Edge;
 
-require_once __DIR__ . '/../../Bitmap.php';
-require_once __DIR__ . '/../../ILazyBitmap.php';
-require_once __DIR__ . '/../../Operation/Difference.php';
-require_once __DIR__ . '/../../Operation/Shift.php';
-
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Operation\Difference;
