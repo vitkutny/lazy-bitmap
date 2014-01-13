@@ -34,6 +34,7 @@ class Difference extends Bitmap {
                     abs($pixel->blue - $pixelDiff->blue) < $this->difference
             ) {
                 $pixel->disable();
+                break;
             }
         }
         return $pixel;
