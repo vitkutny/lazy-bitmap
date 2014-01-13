@@ -8,13 +8,10 @@ use LazyBitmap\ILazyBitmap;
 class Unification extends Bitmap implements ILazyBitmap {
 
     private $lbms;
-    private $limitTemp;
 
     public function __construct(ILazyBitmap $lbm) {
         $this->lbm = $lbm;
         $this->lbms = array_reverse(func_get_args());
-        $this->limitTemp = ini_get('max_execution_time');
-        ini_set('max_execution_time', 10000000);
     }
 
     public function getPixel($x, $y) {
@@ -28,10 +25,6 @@ class Unification extends Bitmap implements ILazyBitmap {
             }
         }
         return $pixel;
-    }
-
-    public function __destruct() {
-        ini_set('max_execution_time', $this->limitTemp);
     }
 
 }

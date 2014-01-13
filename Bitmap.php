@@ -9,11 +9,7 @@ abstract class Bitmap implements ILazyBitmap {
     protected $lbm;
 
     public function getPixel($x, $y) {
-        $pixel = $this->lbm->getPixel($x, $y);
-        if (!$pixel->isActive()) {
-            $pixel->setColor();
-        }
-        return $pixel;
+        return $this->lbm->getPixel($x, $y);
     }
 
     public function getWidth() {
@@ -24,7 +20,7 @@ abstract class Bitmap implements ILazyBitmap {
         return $this->lbm->getHeight();
     }
 
-    public function getImage(){
+    public function getImage() {
         $image = imagecreatetruecolor($this->getWidth(), $this->getHeight());
 
         imagesavealpha($image, true);
@@ -33,8 +29,10 @@ abstract class Bitmap implements ILazyBitmap {
         for ($y = 0; $y < $this->getHeight(); $y++) {
             for ($x = 0; $x < $this->getWidth(); $x++) {
                 $pixel = $this->getPixel($x, $y);
-                $color = imagecolorallocatealpha($image, $pixel->red, $pixel->green, $pixel->blue, $pixel->alpha);
-                imagesetpixel($image, $x, $y, $color);
+                if (!$pixel->isActive()) {
+                    continue;
+                }
+                imagesetpixel($image, $x, $y, $pixel->getColor($image));
             }
         }
 

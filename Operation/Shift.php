@@ -23,7 +23,7 @@ class Shift extends Bitmap implements ILazyBitmap {
             return parent::getPixel($oldX, $oldY);
         } else {
             $pixel = parent::getPixel($x, $y);
-            $pixel->setColor();
+            $pixel->disable();
             return $pixel;
         }
     }

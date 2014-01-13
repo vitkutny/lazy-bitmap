@@ -9,7 +9,7 @@ class BlueOverlay extends Overlay implements ILazyBitmap {
 
     public function getPixel($x, $y) {
         $pixel = parent::getPixel($x, $y);
-        $pixel->setColor(0, 0, $pixel->blue);
+        $pixel->setColor($this->calculate($pixel->red), $this->calculate($pixel->green), $pixel->blue);
         return $pixel;
     }
 
