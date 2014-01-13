@@ -24,7 +24,7 @@ abstract class Bitmap implements ILazyBitmap {
         return $this->lbm->getHeight();
     }
 
-    public function render() {
+    public function getImage(){
         $image = imagecreatetruecolor($this->getWidth(), $this->getHeight());
 
         imagesavealpha($image, true);
@@ -37,8 +37,20 @@ abstract class Bitmap implements ILazyBitmap {
                 imagesetpixel($image, $x, $y, $color);
             }
         }
+
+        return $image;
+    }
+
+    public function render() {
+        $image = $this->getImage();
         header('Content-Type: image/png');
         imagepng($image);
+        imagedestroy($image);
+    }
+
+    public function save($file) {
+        $image = $this->getImage();
+        imagepng($image, $file);
         imagedestroy($image);
     }
 
