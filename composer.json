@@ -1,5 +1,5 @@
 {
-    "name": "vitkutny/LazyBitmap",
+    "name": "vitkutny/lazy-bitmap",
     "autoload": {
         "psr-4": {"LazyBitmap\\": ""}
     }
