@@ -32,7 +32,7 @@ class Unification extends Bitmap {
             }
             $top = $lbm->getPixel($x, $y);
             if ($top->isActive()) {
-                return $this->blend->calculatePixel($pixel, $top);
+                return $this->blend->calculatePixel($top, $pixel);
             }
         }
         return $pixel;
