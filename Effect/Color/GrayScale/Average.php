@@ -1,11 +1,10 @@
 <?php
 
-namespace LazyBitmap\Effect\Color\Overlay;
+namespace LazyBitmap\Effect\Color\GrayScale;
 
-use LazyBitmap\Effect\Color\Overlay\Overlay;
-use LazyBitmap\ILazyBitmap;
+use LazyBitmap\Bitmap;
 
-class GrayOverlay extends Overlay implements ILazyBitmap {
+class Average extends Bitmap {
 
     public function getPixel($x, $y) {
         $pixel = parent::getPixel($x, $y);

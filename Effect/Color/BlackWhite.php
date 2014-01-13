@@ -6,12 +6,12 @@ use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Exception;
 
-class BlackWhite extends Bitmap implements ILazyBitmap {
+class BlackWhite extends Bitmap {
 
     private $percent;
 
     public function __construct(ILazyBitmap $lbm, $percent = 50) {
-        $this->lbm = $lbm;
+        parent::__construct($lbm);
         if ($percent < 0 || $percent > 100) {
             throw new Exception('Percents must be in range from 0 to 100.');
         }

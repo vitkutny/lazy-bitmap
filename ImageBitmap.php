@@ -3,10 +3,9 @@
 namespace LazyBitmap;
 
 use LazyBitmap\Bitmap;
-use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Pixel;
 
-class ImageBitmap extends Bitmap implements ILazyBitmap {
+class ImageBitmap extends Bitmap {
 
     private $image;
     private $width;

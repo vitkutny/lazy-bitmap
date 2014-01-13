@@ -8,6 +8,10 @@ abstract class Bitmap implements ILazyBitmap {
 
     protected $lbm;
 
+    public function __construct(ILazyBitmap $lbm) {
+        $this->lbm = $lbm;
+    }
+
     public function getPixel($x, $y) {
         return $this->lbm->getPixel($x, $y);
     }

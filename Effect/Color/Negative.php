@@ -3,13 +3,8 @@
 namespace LazyBitmap\Effect\Color;
 
 use LazyBitmap\Bitmap;
-use LazyBitmap\ILazyBitmap;
 
-class Negative extends Bitmap implements ILazyBitmap {
-
-    public function __construct(ILazyBitmap $lbm) {
-        $this->lbm = $lbm;
-    }
+class Negative extends Bitmap {
 
     public function getPixel($x, $y) {
         $pixel = parent::getPixel($x, $y);

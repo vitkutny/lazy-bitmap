@@ -1,17 +1,17 @@
 <?php
 
-namespace LazyBitmap\Effect\Edge;
+namespace LazyBitmap\Effect\Edges;
 
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Operation\Difference;
 use LazyBitmap\Operation\Shift;
 
-class RightEdge extends Bitmap implements ILazyBitmap {
+class TopLeft extends Bitmap {
 
     public function __construct(ILazyBitmap $lbm, $size = 1, $difference = 30) {
-        $shift = new Shift($lbm, -$size, 0);
-        $difference = new Difference($lbm, $shift, $difference);
+        $shift = new Shift($lbm, $size, $size);
+        $difference = new Difference($lbm, $difference, $shift);
         $this->lbm = $difference;
     }
 

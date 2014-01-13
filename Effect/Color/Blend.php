@@ -5,13 +5,14 @@ namespace LazyBitmap\Effect\Color;
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 use LazyBitmap\Pixel;
+use LazyBitmap\Exception;
 
-abstract class Blend extends Bitmap implements ILazyBitmap {
+abstract class Blend extends Bitmap {
 
-    protected $pixel;
+    private $pixel;
 
     public function __construct(ILazyBitmap $lbm, $red = 0, $green = 0, $blue = 0) {
-        $this->lbm = $lbm;
+        parent::__construct($lbm);
         if (min($red, $green, $blue) < 0 || max($red, $green, $blue) > 255) {
             throw new Exception('Colors must be in range from 0 to 255.');
         }

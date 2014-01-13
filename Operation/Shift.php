@@ -5,22 +5,22 @@ namespace LazyBitmap\Operation;
 use LazyBitmap\Bitmap;
 use LazyBitmap\ILazyBitmap;
 
-class Shift extends Bitmap implements ILazyBitmap {
+class Shift extends Bitmap {
 
     private $x;
     private $y;
 
     public function __construct(ILazyBitmap $lbm, $x, $y) {
-        $this->lbm = $lbm;
+        parent::__construct($lbm);
         $this->x = $x;
         $this->y = $y;
     }
 
     public function getPixel($x, $y) {
-        $oldX = $x - $this->x;
-        $oldY = $y - $this->y;
-        if (-1 < $oldX && $oldX < $this->getWidth() && -1 < $oldY && $oldY < $this->getHeight()) {
-            return parent::getPixel($oldX, $oldY);
+        $newX = $x - $this->x;
+        $newY = $y - $this->y;
+        if (-1 < $newX && $newX < $this->getWidth() && -1 < $newY && $newY < $this->getHeight()) {
+            return parent::getPixel($newX, $newY);
         } else {
             $pixel = parent::getPixel($x, $y);
             $pixel->disable();

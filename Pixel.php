@@ -21,8 +21,16 @@ class Pixel {
         $this->blue = $blue;
     }
 
-    public function getColor($image) {
-        return imagecolorallocatealpha($image, $this->red, $this->green, $this->blue, $this->alpha);
+    public function getColor($image = NULL) {
+        if ($image) {
+            return imagecolorallocatealpha($image, $this->red, $this->green, $this->blue, $this->alpha);
+        } else {
+            return array(
+                'red' => $this->red,
+                'green' => $this->green,
+                'blue' => $this->blue,
+            );
+        }
     }
 
     public function setAlpha($alpha = 0) {
@@ -32,6 +40,15 @@ class Pixel {
     public function fromArray(array $colors) {
         $this->setColor($colors['red'], $colors['green'], $colors['blue']);
         $this->setAlpha($colors['alpha']);
+    }
+
+    public function toArray() {
+        return array(
+            'red' => $this->red,
+            'green' => $this->green,
+            'blue' => $this->blue,
+            'alpha' => $this->alpha
+        );
     }
 
     public function getAverage() {
