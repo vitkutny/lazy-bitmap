@@ -2,13 +2,8 @@
 
 namespace LazyBitmap\Effect\Color\Blend;
 
-use LazyBitmap\Effect\Color\Blend;
-use LazyBitmap\Effect\Color\Blend\Substract;
+use LazyBitmap\Effect\Color\Blend\Subtract;
 
-class LinearBurn extends Blend {
-
-    public static function calculateColor($bottom, $top) {
-        return Substract::calculateColor($bottom, $top);
-    }
-
+class LinearBurn extends Subtract {
+    
 }
