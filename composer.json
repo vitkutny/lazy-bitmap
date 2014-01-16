@@ -1,5 +1,6 @@
 {
     "name": "vitkutny/lazybitmap",
+    "description": "Library for basic image editing",
     "autoload": {
         "psr-4": {"LazyBitmap\\": ""}
     }
